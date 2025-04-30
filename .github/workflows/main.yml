@@ -1,0 +1,14 @@
+name: Vue Deployment
+
+on: 
+  push:
+    branches: [main]
+
+  jobs:
+    deploy:
+      runs-on: ubuntu-lastest
+      steps:
+      - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      width:
+        host:
