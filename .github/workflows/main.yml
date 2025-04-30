@@ -1,6 +1,6 @@
 name: Vue Deployment
 
-on: 
+on:
   push:
     branches: [main]
 
@@ -17,6 +17,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 24700
           script: |
+            export PATH=$PATH:/root/.nvm/versions/node/v22.15.0/bin/pm2
             cd /home/my-portfolio
             git fetch origin
             git checkout main
