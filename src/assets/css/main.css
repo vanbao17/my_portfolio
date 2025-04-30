@@ -1,0 +1,22 @@
+:root {
+  --primary-color: #fd6f00;
+  --secondary-color: #f2f3f4;
+  --background-color: #fff;
+  --text-color: #333;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+ul,
+p {
+  padding: 0;
+  margin: 0;
+}
