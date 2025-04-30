@@ -120,7 +120,7 @@ onMounted(() => {
       </div>
 
       <div class="block_project" ref="animatedDiv5" id="block_project">
-        <h1>Dự án cá nhân 123</h1>
+        <h1>Dự án cá nhân</h1>
         <p>
           Một số dự án cá nhân, mà bản thân đã tham gia xây dựng và tích lũy
           được khá nhiều kinh nghiệm.
