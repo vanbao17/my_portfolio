@@ -128,19 +128,24 @@ onMounted(() => {
           <div class="block_social_infor">
             <div class="icon">
               <a target="_blank" href="https://www.facebook.com/bao.pam.03"
-                ><img src="../../assets/icons/facebook.svg"
+                ><img src="../../assets/svg/facebook-svgrepo-com.svg"
               /></a>
             </div>
             <div class="icon">
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/pha%CC%A3m-ba%CC%89o-7a7bb525a/"
-                ><img src="../../assets/icons/linkedin.svg"
+                ><img src="../../assets/svg/linkedin-color-svgrepo-com.svg"
               /></a>
             </div>
             <div class="icon">
               <a href="https://github.com/vanbao17" target="_blank"
-                ><img src="../../assets/icons/github.svg"
+                ><img src="../../assets/svg/github-142-svgrepo-com.svg"
+              /></a>
+            </div>
+            <div class="icon">
+              <a href="https://www.youtube.com/@DFF17-11" target="_blank"
+                ><img src="../../assets/svg/youtube-svgrepo-com.svg"
               /></a>
             </div>
           </div>
