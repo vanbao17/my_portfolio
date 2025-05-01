@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import Button from "../common/Button.vue";
-import cvFile from "../../assets/files/mycv.pdf";
+import cvFile from "../../assets/files/cv.pdf";
 const downloadCV = () => {
   const link = document.createElement("a");
   link.href = cvFile;
-  link.download = "CV_Của_Bảo.pdf";
+  link.download = "CV_Của_Tớ_Đây.pdf";
   link.click();
 };
 </script>
@@ -14,20 +14,27 @@ const downloadCV = () => {
       <div class="header_logo"><a href="/">BẢO</a></div>
       <ul class="header_left">
         <li>
-          <a>Home</a>
+          <a>Trang chủ</a>
         </li>
         <li>
-          <a href="#block_first">About Me</a>
+          <a href="#block_first">Thông tin về tôi</a>
         </li>
         <li>
-          <a href="#block_project">Projects</a>
+          <a href="#block_skill">Kỹ năng</a>
         </li>
         <li>
-          <a href="#footer">Contact</a>
+          <a href="#block_project">Dự án cá nhân</a>
+        </li>
+        <li>
+          <a href="#footer">Liên hệ</a>
         </li>
       </ul>
       <div class="header_right">
-        <Button @click="downloadCV" type="primary" title="Download CV" />
+        <Button
+          @click="downloadCV"
+          type="primary"
+          title="Tải CV của tớ tại đây"
+        />
       </div>
     </div>
   </div>
