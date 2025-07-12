@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoAnPro - Dịch vụ Đồ án chuyên nghiệp</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3498db;
+      --secondary: #2ecc71;
+      --dark: #2c3e50;
+      --light: #ecf0f1;
+      --accent: #e74c3c;
+      --text: #333333;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    header.scrolled {
+      padding: 0.5rem 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
+    
+    header.scrolled .logo {
+      color: var(--primary);
+    }
+    
+    header.scrolled .nav-link {
+      color: var(--dark);
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .logo i {
+      margin-right: 8px;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/800') center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid white;
+      margin-left: 1rem;
+      box-shadow: none;
+    }
+    
+    .btn-secondary:hover {
+      background: white;
+      color: var(--primary);
+    }
+    
+    /* Services Section */
+    .section {
+      padding: 6rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--dark);
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-img {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .service-content {
+      padding: 1.5rem;
+    }
+    
+    .service-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--dark);
+    }
+    
+    .service-content p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    
+    .service-price {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .original-price {
+      text-decoration: line-through;
+      color: #999;
+      margin-left: 0.8rem;
+    }
+    
+    /* Features Section */
+    .features {
+      background: linear-gradient(135deg, #2c3e50, #1a252f);
+      color: white;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+    }
+    
+    .feature-item {
+      text-align: center;
+    }
+    
+    .feature-icon {
+      background: var(--primary);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+    }
+    
+    .feature-item h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .feature-item p {
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+    
+    /* Process Section */
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: relative;
+    }
+    
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: #e0e0e0;
+    }
+    
+    .step {
+      text-align: center;
+      width: 22%;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .step-number {
+      background: var(--primary);
+      color: white;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .step h3 {
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+    
+    .step p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      background: #f9f9f9;
+    }
+    
+    .testimonial-slider {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .testimonial-slide {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 5px solid var(--primary);
+    }
+    
+    .testimonial-quote {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: #555;
+    }
+    
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+    
+    .testimonial-position {
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+    
+    .testimonial-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      gap: 0.5rem;
+    }
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .dot.active {
+      background: var(--primary);
+      transform: scale(1.3);
+    }
+    
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, var(--primary), #1a6cb3);
+      color: white;
+      text-align: center;
+      padding: 5rem 0;
+    }
+    
+    .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta p {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.9;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    /* FAQ Section */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      background: white;
+    }
+    
+    .faq-question {
+      padding: 1.2rem;
+      background: white;
+      color: var(--dark);
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      background: #f8f8f8;
+    }
+    
+    .faq-question i {
+      transition: all 0.3s ease;
+    }
+    
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      padding: 0 1.2rem;
+      max-height: 0;
+      overflow: hidden;
+      line-height: 1.6;
+      color: #666;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-question.active + .faq-answer {
+      padding: 1.2rem;
+      max-height: 500px;
+      border-top: 1px solid #eee;
+    }
+    
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+      color: var(--dark);
+    }
+    
+    .contact-text p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-col h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+    
+    .footer-col h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--primary);
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-col ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .footer-col ul li a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+    
+    .footer-col p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+    
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    
+    .fade-up.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Floating particles */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 8s infinite ease-in-out;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-60px) rotate(180deg);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(0) rotate(360deg);
+        opacity: 1;
+      }
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      
+      .process-steps::before {
+        display: none;
+      }
+      
+      .step {
+        width: 48%;
+        margin-bottom: 2rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-info {
+        order: -1;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header nav {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+      
+      .btn {
+        padding: 0.7rem 1.5rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .step {
+        width: 100%;
+      }
+      
+      .footer-grid {
+        gap: 2rem;
+      }
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+      transition: all 0.5s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .mobile-menu ul {
+      list-style: none;
+      text-align: center;
+    }
+    
+    .mobile-menu li {
+      margin-bottom: 1.5rem;
+    }
+    
+    .mobile-menu a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu a:hover {
+      color: var(--primary);
+    }
+    
+    .close-menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header :class="{ scrolled: scrolled }">
+      <div class="container">
+        <div class="header-content">
+          <a href="#" class="logo">
+            <i class="fas fa-graduation-cap"></i> DoAnPro
+          </a>
+          <nav>
+            <ul>
+              <li><a href="#home" class="nav-link">Trang chủ</a></li>
+              <li><a href="#services" class="nav-link">Dịch vụ</a></li>
+              <li><a href="#process" class="nav-link">Quy trình</a></li>
+              <li><a href="#testimonials" class="nav-link">Đánh giá</a></li>
+              <li><a href="#faq" class="nav-link">FAQ</a></li>
+              <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+            </ul>
+          </nav>
+          <button class="mobile-menu-btn" @click="toggleMobileMenu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" :class="{ active: mobileMenuOpen }">
+      <button class="close-menu" @click="toggleMobileMenu">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul>
+        <li><a href="#home" @click="toggleMobileMenu">Trang chủ</a></li>
+        <li><a href="#services" @click="toggleMobileMenu">Dịch vụ</a></li>
+        <li><a href="#process" @click="toggleMobileMenu">Quy trình</a></li>
+        <li><a href="#testimonials" @click="toggleMobileMenu">Đánh giá</a></li>
+        <li><a href="#faq" @click="toggleMobileMenu">FAQ</a></li>
+        <li><a href="#contact" @click="toggleMobileMenu">Liên hệ</a></li>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="particles">
+        <div class="particle" v-for="(particle, index) in particles" :key="index" 
+             :style="{ left: particle.x + '%', top: particle.y + '%', width: particle.size + 'px', height: particle.size + 'px', animationDelay: particle.delay + 's' }">
+        </div>
+      </div>
+      <div class="container">
+        <div class="hero-content animate__animated animate__fadeInUp">
+          <h1>Giải pháp đồ án toàn diện cho sinh viên</h1>
+          <p>Chúng tôi cung cấp dịch vụ làm đồ án chuyên nghiệp, hỗ trợ tư vấn và đồng hành cùng bạn trong suốt quá trình học tập. Với đội ngũ chuyên gia hàng đầu, chúng tôi cam kết mang đến cho bạn sản phẩm chất lượng cao, đúng tiến độ.</p>
+          <div>
+            <a href="#services" class="btn">Khám phá dịch vụ</a>
+            <a href="#contact" class="btn btn-secondary">Liên hệ ngay</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Dịch vụ của chúng tôi</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card" v-for="(service, index) in services" :key="index" data-aos="fade-up" :data-aos-delay="index * 100">
+            <div class="service-img" :style="{ backgroundImage: 'url(' + service.image + ')'}"></div>
+            <div class="service-content">
+              <h3>{{ service.title }}</h3>
+              <p>{{ service.description }}</p>
+              <div class="service-price">
+                <span class="price">{{ service.price }}</span>
+                <span class="original-price" v-if="service.originalPrice">{{ service.originalPrice }}</span>
+              </div>
+              <a :href="service.link" class="btn">Xem chi tiết</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tại sao chọn chúng tôi?</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-item" v-for="(feature, index) in features" :key="index" data-aos="fade-up" :data-aos-delay="index * 100">
+            <div class="feature-icon">
+              <i :class="feature.icon"></i>
+            </div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-title">
+          <h2>Quy trình làm việc</h2>
+        </div>
+        <div class="process-steps">
+          <div class="step" v-for="(step, index) in steps" :key="index" data-aos="fade-up" :data-aos-delay="index * 100">
+            <div class="step-number">{{ index + 1 }}</div>
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>Khách hàng nói gì về chúng tôi</h2>
+        </div>
+        <div class="testimonial-slider">
+          <div class="testimonial-slide" v-if="currentTestimonial" data-aos="fade-up">
+            <img :src="currentTestimonial.avatar" alt="Avatar" class="testimonial-avatar">
+            <p class="testimonial-quote">{{ currentTestimonial.quote }}</p>
+            <h4 class="testimonial-author">{{ currentTestimonial.author }}</h4>
+            <p class="testimonial-position">{{ currentTestimonial.position }}</p>
+          </div>
+          <div class="testimonial-dots">
+            <div class="dot" v-for="(testimonial, index) in testimonials" :key="index" 
+                 :class="{ active: currentTestimonialIndex === index }" 
+                 @click="setTestimonial(index)"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+      <div class="container">
+        <h2 data-aos="fade-up">Sẵn sàng nâng cao chất lượng đồ án của bạn?</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Hãy liên hệ với chúng tôi ngay hôm nay để nhận tư vấn miễn phí và giải đáp mọi thắc mắc của bạn. Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ bạn.</p>
+        <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+          <a href="#contact" class="btn">Liên hệ ngay</a>
+          <a href="#services" class="btn btn-secondary">Xem dịch vụ</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Câu hỏi thường gặp</h2>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item" v-for="(item, index) in faqs" :key="index" data-aos="fade-up" :data-aos-delay="index * 100">
+            <div class="faq-question" :class="{ active: activeFaq === index }" @click="toggleFaq(index)">
+              {{ item.question }}
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              {{ item.answer }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Liên hệ với chúng tôi</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-form" data-aos="fade-right">
+            <form @submit.prevent="submitForm">
+              <div class="form-group">
+                <label for="name">Họ và tên</label>
+                <input type="text" id="name" class="form-control" v-model="contactForm.name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" v-model="contactForm.email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" class="form-control" v-model="contactForm.phone">
+              </div>
+              <div class="form-group">
+                <label for="subject">Chủ đề</label>
+                <input type="text" id="subject" class="form-control" v-model="contactForm.subject">
+              </div>
+              <div class="form-group">
+                <label for="message">Nội dung</label>
+                <textarea id="message" class="form-control" v-model="contactForm.message" required></textarea>
+              </div>
+              <button type="submit" class="btn">Gửi tin nhắn</button>
+            </form>
+          </div>
+          <div class="contact-info" data-aos="fade-left">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Địa chỉ</h3>
+                <p>123 Đường Nguyễn Văn Linh, Quận 7, TP.HCM</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Điện thoại</h3>
+                <p>+84 123 456 789</p>
+                <p>+84 987 654 321</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Email</h3>
+                <p>info@doanpro.com</p>
+                <p>support@doanpro.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Giờ làm việc</h3>
+                <p>Thứ Hai - Thứ Sáu: 8:00 - 18:00</p>
+                <p>Thứ Bảy: 9:00 - 12:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>Về chúng tôi</h3>
+            <p>DoAnPro là đơn vị hàng đầu trong lĩnh vực cung cấp dịch vụ hỗ trợ đồ án cho sinh viên. Với hơn 5 năm kinh nghiệm, chúng tôi tự hào mang đến những sản phẩm chất lượng cao, đảm bảo sự hài lòng cho khách hàng.</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Dịch vụ</h3>
+            <ul>
+              <li><a href="#">Đồ án tốt nghiệp</a></li>
+              <li><a href="#">Đồ án môn học</a></li>
+              <li><a href="#">Luận văn thạc sĩ</a></li>
+              <li><a href="#">Tư vấn đồ án</a></li>
+              <li><a href="#">Chỉnh sửa đồ án</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Liên kết</h3>
+            <ul>
+              <li><a href="#home">Trang chủ</a></li>
+              <li><a href="#services">Dịch vụ</a></li>
+              <li><a href="#process">Quy trình</a></li>
+              <li><a href="#testimonials">Đánh giá</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Bản tin</h3>
+            <p>Đăng ký nhận thông tin mới nhất về dịch vụ và khuyến mãi từ chúng tôi</p>
+            <form @submit.prevent="subscribeNewsletter">
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email của bạn" v-model="newsletterEmail" required>
+              </div>
+              <button type="submit" class="btn">Đăng ký</button>
+            </form>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; {{ new Date().getFullYear() }} DoAnPro. Tất cả quyền được bảo lưu.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" :class="{ active: showBackToTop }" @click="scrollToTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <!-- Vue.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.min.js"></script>
+  <!-- AOS Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          scrolled: false,
+          mobileMenuOpen: false,
+          showBackToTop: false,
+          activeFaq: null,
+          currentTestimonialIndex: 0,
+          autoplayInterval: null,
+          contactForm: {
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: ''
+          },
+          newsletterEmail: '',
+          particles: [],
+          
+          // Services Data
+          services: [
+            {
+              title: 'Đồ án tốt nghiệp',
+              description: 'Dịch vụ hỗ trợ, tư vấn và thực hiện đồ án tốt nghiệp cho sinh viên các ngành kỹ thuật, công nghệ, kinh tế và các lĩnh vực khác.',
+              price: 'Từ 5.000.000đ',
+              originalPrice: '7.000.000đ',
+              image: '/api/placeholder/600/400',
+              link: '#contact'
+            },
+            {
+              title: 'Đồ án môn học',
+              description: 'Hỗ trợ sinh viên hoàn thành đồ án môn học với chất lượng cao, đảm bảo điểm số tốt và kiến thức chuyên môn.',
+              price: 'Từ 1.500.000đ',
+              originalPrice: '2.500.000đ',
+              image: '/api/placeholder/600/400',
+              link: '#contact'
+            },
+            {
+              title: 'Luận văn thạc sĩ',
+              description: 'Dịch vụ tư vấn, hỗ trợ nghiên cứu và hoàn thiện luận văn thạc sĩ với phương pháp nghiên cứu chuyên sâu.',
+              price: 'Từ 15.000.000đ',
+              originalPrice: '20.000.000đ',
+              image: '/api/placeholder/600/400',
+              link: '#contact'
+            },
+            {
+              title: 'Chỉnh sửa & Tư vấn',
+              description: 'Dịch vụ chỉnh sửa, góp ý và cải thiện chất lượng đồ án đã có, giúp bạn hoàn thiện sản phẩm.',
+              price: 'Từ 800.000đ',
+              image: '/api/placeholder/600/400',
+              link: '#contact'
+            }
+          ],
+          
+          // Features Data
+          features: [
+            {
+              title: 'Chất lượng cao',
+              description: 'Đồ án được thực hiện bởi đội ngũ chuyên gia có kinh nghiệm và trình độ chuyên môn cao.',
+              icon: 'fas fa-award'
+            },
+            {
+              title: 'Bảo mật thông tin',
+              description: 'Thông tin khách hàng và nội dung đồ án được bảo mật tuyệt đối, đảm bảo quyền riêng tư.',
+              icon: 'fas fa-shield-alt'
+            },
+            {
+              title: 'Hỗ trợ 24/7',
+              description: 'Đội ngũ hỗ trợ luôn sẵn sàng giải đáp mọi thắc mắc và yêu cầu của khách hàng.',
+              icon: 'fas fa-headset'
+            },
+            {
+              title: 'Đúng tiến độ',
+              description: 'Cam kết hoàn thành đồ án đúng thời hạn, không để ảnh hưởng đến kế hoạch học tập.',
+              icon: 'fas fa-clock'
+            },
+            {
+              title: 'Chỉnh sửa miễn phí',
+              description: 'Hỗ trợ chỉnh sửa miễn phí sau khi bàn giao sản phẩm cho đến khi khách hàng hài lòng.',
+              icon: 'fas fa-sync-alt'
+            },
+            {
+              title: 'Giá cả hợp lý',
+              description: 'Mức giá cạnh tranh, phù hợp với chất lượng và nhu cầu của sinh viên.',
+              icon: 'fas fa-money-bill-wave'
+            }
+          ],
+          
+          // Process Steps
+          steps: [
+            {
+              title: 'Tư vấn & Báo giá',
+              description: 'Chúng tôi tư vấn chi tiết về yêu cầu và cung cấp báo giá phù hợp.'
+            },
+            {
+              title: 'Ký hợp đồng',
+              description: 'Ký kết hợp đồng rõ ràng, đảm bảo quyền lợi của cả hai bên.'
+            },
+            {
+              title: 'Thực hiện',
+              description: 'Đội ngũ chuyên gia bắt đầu thực hiện đồ án theo yêu cầu đã thống nhất.'
+            },
+            {
+              title: 'Bàn giao & Hỗ trợ',
+              description: 'Bàn giao sản phẩm đúng hẹn và hỗ trợ chỉnh sửa đến khi hoàn thiện.'
+            }
+          ],
+          
+          // Testimonials
+          testimonials: [
+            {
+              author: 'Nguyễn Văn A',
+              position: 'Sinh viên CNTT - ĐH Bách Khoa',
+              quote: 'DoAnPro đã giúp tôi hoàn thành xuất sắc đồ án tốt nghiệp. Đội ngũ chuyên nghiệp, tận tâm và luôn sẵn sàng hỗ trợ mọi thắc mắc. Tôi đã nhận được điểm A cho đồ án của mình!',
+              avatar: '/api/placeholder/200/200'
+            },
+            {
+              author: 'Trần Thị B',
+              position: 'Sinh viên Kinh tế - ĐH Kinh tế TP.HCM',
+              quote: 'Dịch vụ tuyệt vời! Đồ án của tôi được hoàn thành đúng hạn với chất lượng vượt mong đợi. Cảm ơn DoAnPro đã giúp tôi trong giai đoạn khó khăn này.',
+              avatar: '/api/placeholder/200/200'
+            },
+            {
+              author: 'Lê Văn C',
+              position: 'Học viên Cao học - ĐH Quốc gia',
+              quote: 'Luận văn thạc sĩ của tôi đã được hoàn thành một cách chuyên nghiệp và chất lượng. Đội ngũ DoAnPro không chỉ giúp tôi thực hiện mà còn tư vấn nhiều phương pháp nghiên cứu hữu ích.',
+              avatar: '/api/placeholder/200/200'
+            }
+          ],
+          
+          // FAQs
+          faqs: [
+            {
+              question: 'Làm thế nào để biết chi phí cho đồ án của tôi?',
+              answer: 'Chi phí sẽ được tính dựa trên nhiều yếu tố như loại đồ án, độ phức tạp, thời gian hoàn thành và yêu cầu cụ thể. Bạn có thể liên hệ với chúng tôi để được tư vấn và báo giá chi tiết.'
+            },
+            {
+              question: 'Thời gian hoàn thành đồ án là bao lâu?',
+              answer: 'Thời gian hoàn thành phụ thuộc vào độ phức tạp và yêu cầu của đồ án. Thông thường, đồ án môn học cần 3-7 ngày, đồ án tốt nghiệp cần 15-30 ngày, và luận văn thạc sĩ cần 1-3 tháng. Chúng tôi luôn cố gắng đáp ứng deadline của khách hàng.'
+            },
+            {
+              question: 'Làm thế nào để tôi biết đồ án của mình không bị đạo văn?',
+              answer: 'Chúng tôi cam kết tạo ra sản phẩm độc quyền cho từng khách hàng. Mọi đồ án đều được kiểm tra kỹ lưỡng bằng các phần mềm chống đạo văn chuyên nghiệp trước khi bàn giao. Bạn sẽ nhận được báo cáo kiểm tra đạo văn kèm theo sản phẩm.'
+            },
+            {
+              question: 'Tôi có thể yêu cầu chỉnh sửa sau khi nhận đồ án không?',
+              answer: 'Tất nhiên! Chúng tôi hỗ trợ chỉnh sửa miễn phí cho đến khi khách hàng hoàn toàn hài lòng. Điều này được đảm bảo trong hợp đồng dịch vụ của chúng tôi.'
+            },
+            {
+              question: 'Các phương thức thanh toán nào được chấp nhận?',
+              answer: 'Chúng tôi chấp nhận thanh toán qua chuyển khoản ngân hàng, ví điện tử (Momo, ZaloPay, VNPay) và tiền mặt. Khách hàng sẽ thanh toán 50% giá trị hợp đồng khi bắt đầu và 50% còn lại khi nhận bàn giao sản phẩm.'
+            },
+            {
+              question: 'Liệu tôi có thể gặp trực tiếp người làm đồ án cho tôi?',
+              answer: 'Có thể, tùy thuộc vào vị trí địa lý và lịch trình của chuyên gia. Chúng tôi thường tổ chức các buổi tư vấn trực tuyến qua Zoom/Google Meet. Nếu bạn có yêu cầu gặp trực tiếp, vui lòng thông báo trước để chúng tôi sắp xếp.'
+            }
+          ]
+        }
+      },
+      computed: {
+        currentTestimonial() {
+          return this.testimonials[this.currentTestimonialIndex];
+        }
+      },
+      methods: {
+        // Header scroll effect
+        handleScroll() {
+          if (window.scrollY > 50) {
+            this.scrolled = true;
+            this.showBackToTop = true;
+          } else {
+            this.scrolled = false;
+            this.showBackToTop = false;
+          }
+        },
+        
+        // Mobile menu toggle
+        toggleMobileMenu() {
+          this.mobileMenuOpen = !this.mobileMenuOpen;
+          if (this.mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = 'auto';
+          }
+        },
+        
+        // FAQ toggle
+        toggleFaq(index) {
+          if (this.activeFaq === index) {
+            this.activeFaq = null;
+          } else {
+            this.activeFaq = index;
+          }
+        },
+        
+        // Testimonial slider
+        setTestimonial(index) {
+          this.currentTestimonialIndex = index;
+          this.resetAutoplay();
+        },
+        
+        nextTestimonial() {
+          this.currentTestimonialIndex = (this.currentTestimonialIndex + 1) % this.testimonials.length;
+        },
+        
+        resetAutoplay() {
+          clearInterval(this.autoplayInterval);
+          this.autoplayInterval = setInterval(() => {
+            this.nextTestimonial();
+          }, 5000);
+        },
+        
+        // Form submissions
+        submitForm() {
+          // Form submission logic would go here in a real app
+          alert(`Cảm ơn ${this.contactForm.name}! Tin nhắn của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.`);
+          this.contactForm = {
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: ''
+          };
+        },
+        
+        subscribeNewsletter() {
+          // Newsletter subscription logic would go here in a real app
+          alert(`Cảm ơn bạn đã đăng ký nhận bản tin từ DoAnPro!`);
+          this.newsletterEmail = '';
+        },
+        
+        // Scroll to top
+        scrollToTop() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        },
+        
+        // Initialize particles for hero section
+        initParticles() {
+          const particleCount = 20;
+          for (let i = 0; i < particleCount; i++) {
+            this.particles.push({
+              x: Math.random() * 100,
+              y: Math.random() * 100,
+              size: Math.random() * 10 + 5,
+              delay: Math.random() * 5
+            });
+          }
+        }
+      },
+      mounted() {
+        // Initialize AOS animation library
+        AOS.init({
+          duration: 800,
+          once: false
+        });
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', this.handleScroll);
+        
+        // Initialize testimonial autoplay
+        this.autoplayInterval = setInterval(() => {
+          this.nextTestimonial();
+        }, 5000);
+        
+        // Initialize particles
+        this.initParticles();
+        
+        // Check scroll position on page load
+        this.handleScroll();
+      },
+      beforeUnmount() {
+        // Clean up event listeners and intervals
+        window.removeEventListener('scroll', this.handleScroll);
+        clearInterval(this.autoplayInterval);
+      }
+    });
+    
+    app.mount('#app');
+  </script>
+</body>
+</html>

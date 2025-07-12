@@ -56,6 +56,9 @@ if (typeof window !== "undefined") {
           <a href="#block_project" @click="closeMenu">Dự án cá nhân</a>
         </li>
         <li>
+          <a href="../pages/Services.html" >Dịch vụ</a>
+        </li>
+        <li>
           <a href="#footer" @click="closeMenu">Liên hệ</a>
         </li>
         <!-- Button tải CV sẽ hiển thị trong menu mobile -->
