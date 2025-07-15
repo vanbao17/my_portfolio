@@ -481,7 +481,7 @@ onMounted(() => {
               </div>
               <div class="detail-item">
                 <span class="label">GPA:</span>
-                <span class="value">3.19</span>
+                <span class="value">3.22</span>
               </div>
             </div>
           </div>
