@@ -212,6 +212,16 @@ onMounted(() => {
               url="https://senvb-trangban.vercel.app/"
             />
           </div>
+          <div class="project-card" data-animation="animate__fadeInLeft">
+            <CardItem
+              description="Đây là một nền tảng có thể nghe nhạc lúc mới bắt đầu học code và điên nhất tôi từng làm với 1k line với index.html, 2k line trong index.js còn css thì ?? :))"
+              thumb="https://res.cloudinary.com/dumeexund/image/upload/v1752936741/Screenshot_2025-07-19_215211_jef71v.png"
+              title="Zing Mp3 Fake"
+              posittion="Fullstack Developer"
+              :state="false"
+              url="https://vanbao17.github.io/ZingMp3-Fake-/"
+            />
+          </div>
         </div>
       </div>
     </section>
