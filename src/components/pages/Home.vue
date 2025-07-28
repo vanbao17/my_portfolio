@@ -202,7 +202,7 @@ onMounted(() => {
               url="https://senvb.vercel.app/"
             />
           </div>
-          <div class="project-card" data-animation="animate__fadeInLeft">
+          <!-- <div class="project-card" data-animation="animate__fadeInLeft">
             <CardItem
               description="Đây là một nền tảng thuộc môi trường của sendo và dành cho các cửa hàng có thể quản lý sản phẩm của mình, tùy chỉnh, thay đổi thông tin sản phẩm."
               thumb="https://res.cloudinary.com/dumeexund/image/upload/v1744555819/project/xu0cg2isqprza53r8hsp.png"
@@ -211,7 +211,7 @@ onMounted(() => {
               :state="false"
               url="https://senvb-trangban.vercel.app/"
             />
-          </div>
+          </div> -->
           <div class="project-card" data-animation="animate__fadeInLeft">
             <CardItem
               description="Đây là một nền tảng có thể nghe nhạc lúc mới bắt đầu học code và điên nhất tôi từng làm với 1k line với index.html, 2k line trong index.js còn css thì ?? :))"
