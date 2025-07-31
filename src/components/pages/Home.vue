@@ -184,10 +184,11 @@ onMounted(() => {
         <div class="projects-grid">
           <div class="project-card" data-animation="animate__fadeInLeft">
             <CardItem
-              description="Đây là một nền tảng mạng xã hội được xây dựng để sinh viên trong trường có thể kết nối và tương tác với nhau thông qua các chức năng cơ bản như đăng bài viết, like, comment, nhắn tin và làm việc nhóm."
+              description="Đây là một nền tảng mạng xã hội được xây dựng để sinh viên trong trường có thể kết nối và tương tác với nhau thông qua các chức năng như đăng bài viết với AI phân loại ảnh nhạy cảm, like, comment, nhắn tin, chat nhóm, hệ thống kanban làm việc nhóm, quản lý phương tiện với Drive."
               thumb="https://res.cloudinary.com/dumeexund/image/upload/v1746070924/project/fmhh8ajg0qlaiccr1cwx.png"
               title="LifeLink Social Website"
               posittion="Fullstack Developer"
+              :techs="['Python', 'Reactjs', 'NodeJs', 'Mysql']"
               :state="true"
               url="https://lifelink.io.vn/"
             />
@@ -198,6 +199,7 @@ onMounted(() => {
               thumb="https://res.cloudinary.com/dumeexund/image/upload/v1744555821/project/t3gah3ckhg2cszh7kskc.png"
               title="Sendo Clone Website"
               posittion="Fullstack Developer"
+              :techs="['Reactjs', 'NodeJs', 'Mysql']"
               :state="false"
               url="https://senvb.vercel.app/"
             />
@@ -218,6 +220,7 @@ onMounted(() => {
               thumb="https://res.cloudinary.com/dumeexund/image/upload/v1752936741/Screenshot_2025-07-19_215211_jef71v.png"
               title="Zing Mp3 Fake"
               posittion="Fullstack Developer"
+              :techs="['HTML', 'CSS', 'JS']"
               :state="false"
               url="https://vanbao17.github.io/ZingMp3-Fake-/"
             />
