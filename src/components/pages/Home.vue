@@ -184,6 +184,17 @@ onMounted(() => {
         <div class="projects-grid">
           <div class="project-card" data-animation="animate__fadeInLeft">
             <CardItem
+              description="Đây là một nền tảng booking cho sân bóng đá giúp người dùng có thể đặt lịch sân bóng online "
+              thumb="https://res.cloudinary.com/dumeexund/image/upload/v1754321725/Screenshot_2025-08-04_223510_srmd0y.png"
+              title="Booking Football Website"
+              posittion="Fullstack Developer"
+              :techs="['Vuejs', 'NodeJs', 'Mysql', 'TypeScript']"
+              :state="true"
+              url="https://fbooking-vb.vercel.app/"
+            />
+          </div>
+          <div class="project-card" data-animation="animate__fadeInLeft">
+            <CardItem
               description="Đây là một nền tảng mạng xã hội được xây dựng để sinh viên trong trường có thể kết nối và tương tác với nhau thông qua các chức năng như đăng bài viết với AI phân loại ảnh nhạy cảm, like, comment, nhắn tin, chat nhóm, hệ thống kanban làm việc nhóm, quản lý phương tiện với Drive."
               thumb="https://res.cloudinary.com/dumeexund/image/upload/v1746070924/project/fmhh8ajg0qlaiccr1cwx.png"
               title="LifeLink Social Website"
