@@ -138,7 +138,7 @@ onMounted(() => {
     </section>
 
     <!-- About Section -->
-    <section
+    <!-- <section
       class="about-section"
       ref="aboutSection"
       data-animation="animate__fadeInLeft"
@@ -165,7 +165,7 @@ onMounted(() => {
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Projects Section -->
     <section
