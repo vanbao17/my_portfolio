@@ -184,7 +184,7 @@ onMounted(() => {
         <div class="projects-grid">
           <div class="project-card" data-animation="animate__fadeInLeft">
             <CardItem
-              description="Đây là một nền tảng booking cho sân bóng đá giúp người dùng có thể đặt lịch sân bóng online "
+              description="Đây là một nền tảng booking cho sân bóng đá theo thời gian thực giúp người dùng có thể đặt lịch sân bóng online nhanh chóng và tiện lợi "
               thumb="https://res.cloudinary.com/dumeexund/image/upload/v1754321725/Screenshot_2025-08-04_223510_srmd0y.png"
               title="Booking Football Website"
               posittion="Fullstack Developer"
