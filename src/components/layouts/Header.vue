@@ -47,13 +47,16 @@ if (typeof window !== "undefined") {
           <a href="/">Trang chủ</a>
         </li>
         <li>
-          <a href="#block_skill" @click="closeMenu">Kỹ năng</a>
+          <a href="#exp" @click="closeMenu">Kinh nghiệm</a>
         </li>
         <li>
-          <a href="#block_project" @click="closeMenu">Dự án cá nhân</a>
+          <a href="#project" @click="closeMenu">Dự án cá nhân</a>
         </li>
         <li>
-          <a href="#block_contact" @click="closeMenu">Liên hệ</a>
+          <a href="#skill" @click="closeMenu">Kỹ năng</a>
+        </li>
+        <li>
+          <a href="#contact" @click="closeMenu">Liên hệ</a>
         </li>
         <!-- Button tải CV sẽ hiển thị trong menu mobile -->
         <li class="mobile-download-button">

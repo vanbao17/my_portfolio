@@ -182,7 +182,7 @@ onMounted(() => {
 
     <!-- Projects Section -->
     <section
-      id="block_project"
+      id="project"
       class="projects-section"
       ref="projectSection"
       data-animation="animate__fadeInUp"
@@ -256,7 +256,7 @@ onMounted(() => {
 
     <!-- Skills Section -->
     <section
-      id="block_skill"
+      id="skill"
       class="skills-section"
       ref="skillSection"
       data-animation="animate__fadeInUp"
@@ -482,6 +482,7 @@ onMounted(() => {
 
     <!-- Experience Section -->
     <section
+      id="exp"
       class="experience-section"
       ref="experienceSection"
       data-animation="animate__fadeInLeft"
@@ -612,7 +613,7 @@ onMounted(() => {
 
     <!-- Contact Section -->
     <section
-      id="block_contact"
+      id="contact"
       class="contact-section"
       ref="contactSection"
       data-animation="animate__fadeInUp"
