@@ -81,7 +81,12 @@ onMounted(() => {
           <div class="hero-visual">
             <div class="profile-container">
               <div class="profile-image">
-                <img src="../../assets/images/profile.png" alt="Phạm Văn Bảo" />
+                <img
+                  src="https://res.cloudinary.com/dumeexund/image/upload/v1760854646/profile_gtb1yn.webp"
+                  alt="Phạm Văn Bảo"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div class="profile-ring"></div>
               </div>
               <div class="floating-elements">
@@ -99,6 +104,8 @@ onMounted(() => {
                 <img
                   src="../../assets/svg/facebook-svgrepo-com.svg"
                   alt="Facebook"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
               <a
@@ -109,6 +116,8 @@ onMounted(() => {
                 <img
                   src="../../assets/svg/linkedin-color-svgrepo-com.svg"
                   alt="LinkedIn"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
               <a
@@ -119,6 +128,8 @@ onMounted(() => {
                 <img
                   src="../../assets/svg/github-142-svgrepo-com.svg"
                   alt="GitHub"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
               <a
@@ -129,6 +140,8 @@ onMounted(() => {
                 <img
                   src="../../assets/svg/youtube-svgrepo-com.svg"
                   alt="YouTube"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
             </div>
@@ -169,6 +182,7 @@ onMounted(() => {
 
     <!-- Projects Section -->
     <section
+      id="block_project"
       class="projects-section"
       ref="projectSection"
       data-animation="animate__fadeInUp"
@@ -185,7 +199,7 @@ onMounted(() => {
           <div class="project-card" data-animation="animate__fadeInLeft">
             <CardItem
               description="Đây là một nền tảng booking cho sân bóng đá theo thời gian thực giúp người dùng có thể đặt lịch sân bóng online nhanh chóng và tiện lợi "
-              thumb="https://res.cloudinary.com/dumeexund/image/upload/v1754321725/Screenshot_2025-08-04_223510_srmd0y.png"
+              thumb="https://res.cloudinary.com/dumeexund/image/upload/f_auto,q_auto/v1760854533/Screenshot_2025-08-04_223510_srmd0y_j7u6ff.webp"
               title="Booking Football Website"
               posittion="Fullstack Developer"
               :techs="['Vuejs', 'NodeJs', 'Mysql', 'TypeScript']"
@@ -242,6 +256,7 @@ onMounted(() => {
 
     <!-- Skills Section -->
     <section
+      id="block_skill"
       class="skills-section"
       ref="skillSection"
       data-animation="animate__fadeInUp"
@@ -261,9 +276,24 @@ onMounted(() => {
               <div class="skill-item">
                 <div class="skill-info">
                   <div class="skill-icons">
-                    <img src="../../assets/images/html.png" alt="HTML" />
-                    <img src="../../assets/images/css.svg" alt="CSS" />
-                    <img src="../../assets/images/js.png" alt="JavaScript" />
+                    <img
+                      src="../../assets/images/html.png"
+                      alt="HTML"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <img
+                      src="../../assets/images/css.svg"
+                      alt="CSS"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <img
+                      src="../../assets/images/js.png"
+                      alt="JavaScript"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <span class="skill-name">HTML/CSS/JavaScript</span>
                 </div>
@@ -280,6 +310,8 @@ onMounted(() => {
                     <img
                       src="../../assets/images/typescript.svg"
                       alt="TypeScript"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <span class="skill-name">TypeScript</span>
@@ -294,7 +326,12 @@ onMounted(() => {
               <div class="skill-item">
                 <div class="skill-info">
                   <div class="skill-icons">
-                    <img src="../../assets/images/reactjs.png" alt="React.js" />
+                    <img
+                      src="../../assets/images/reactjs.png"
+                      alt="React.js"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <span class="skill-name">React.js</span>
                 </div>
@@ -308,7 +345,12 @@ onMounted(() => {
               <div class="skill-item">
                 <div class="skill-info">
                   <div class="skill-icons">
-                    <img src="../../assets/images/vuejs.png" alt="Vue.js" />
+                    <img
+                      src="../../assets/images/vuejs.png"
+                      alt="Vue.js"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <span class="skill-name">Vue.js</span>
                 </div>
@@ -331,7 +373,12 @@ onMounted(() => {
               <div class="skill-item">
                 <div class="skill-info">
                   <div class="skill-icons">
-                    <img src="../../assets/images/nodejs.png" alt="Node.js" />
+                    <img
+                      src="../../assets/images/nodejs.png"
+                      alt="Node.js"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <span class="skill-name">Node.js & RESTful API</span>
                 </div>
@@ -348,6 +395,8 @@ onMounted(() => {
                     <img
                       src="../../assets/images/database.svg"
                       alt="Databases"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <span class="skill-name">MySQL, SQL Server</span>
@@ -365,6 +414,8 @@ onMounted(() => {
                     <img
                       src="../../assets/images/expressjs.png"
                       alt="Express.js"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <span class="skill-name">Express.js</span>
@@ -388,7 +439,12 @@ onMounted(() => {
               <div class="skill-item">
                 <div class="skill-info">
                   <div class="skill-icons">
-                    <img src="../../assets/images/devops.png" alt="DevOps" />
+                    <img
+                      src="../../assets/images/devops.png"
+                      alt="DevOps"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <span class="skill-name">Docker, VPS, Git, GitHub</span>
                 </div>
@@ -402,7 +458,12 @@ onMounted(() => {
               <div class="skill-item">
                 <div class="skill-info">
                   <div class="skill-icons">
-                    <img src="../../assets/images/AI.png" alt="AI" />
+                    <img
+                      src="../../assets/images/AI.png"
+                      alt="AI"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <span class="skill-name">AI cơ bản (Python)</span>
                 </div>
@@ -551,6 +612,7 @@ onMounted(() => {
 
     <!-- Contact Section -->
     <section
+      id="block_contact"
       class="contact-section"
       ref="contactSection"
       data-animation="animate__fadeInUp"

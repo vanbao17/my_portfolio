@@ -22,9 +22,24 @@ const currentYear = new Date().getFullYear();
 
       <!-- Social Icons -->
       <div class="social-icons">
-        <a href="#"><img src="../../assets//icons/facebook.svg" /></a>
-        <a href="#"><img src="../../assets//icons/github.svg" /></a>
-        <a href="#"><img src="../../assets//icons/linkedin.svg" /></a>
+        <a href="#"
+          ><img
+            src="../../assets//icons/facebook.svg"
+            alt="Facebook"
+            loading="lazy"
+        /></a>
+        <a href="#"
+          ><img
+            src="../../assets//icons/github.svg"
+            alt="Github"
+            loading="lazy"
+        /></a>
+        <a href="#"
+          ><img
+            src="../../assets//icons/linkedin.svg"
+            alt="Linkedin"
+            loading="lazy"
+        /></a>
       </div>
     </div>
 

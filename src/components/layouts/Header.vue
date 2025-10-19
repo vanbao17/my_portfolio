@@ -44,10 +44,7 @@ if (typeof window !== "undefined") {
       <!-- Menu navigation -->
       <ul class="header_left" :class="{ 'mobile-menu-open': isMenuOpen }">
         <li>
-          <a @click="closeMenu">Trang chủ</a>
-        </li>
-        <li>
-          <a href="#block_first" @click="closeMenu">Thông tin về tôi</a>
+          <a href="/">Trang chủ</a>
         </li>
         <li>
           <a href="#block_skill" @click="closeMenu">Kỹ năng</a>
@@ -56,10 +53,7 @@ if (typeof window !== "undefined") {
           <a href="#block_project" @click="closeMenu">Dự án cá nhân</a>
         </li>
         <li>
-          <a href="../pages/Services.html" >Dịch vụ</a>
-        </li>
-        <li>
-          <a href="#footer" @click="closeMenu">Liên hệ</a>
+          <a href="#block_contact" @click="closeMenu">Liên hệ</a>
         </li>
         <!-- Button tải CV sẽ hiển thị trong menu mobile -->
         <li class="mobile-download-button">
